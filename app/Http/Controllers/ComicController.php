@@ -44,11 +44,10 @@ class ComicController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Comic  $comic
-     * @return \Illuminate\Http\Response
      */
     public function show(Comic $comic)
     {
-        //
+        return view('comics.show', compact("comic"));
     }
 
     /**

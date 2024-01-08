@@ -4,7 +4,7 @@
 
 @extends('layouts.app')
 
-@section('title', $comic['title'])
+@section('title', $comic->title)
 
 @section('content')
     <main>
@@ -14,19 +14,19 @@
             <div class="blueline">
                 <div class="container">
                     <div class="comic-img">
-                        <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
+                        <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                     </div>
                 </div>
             </div>
             <div class="container py-5">
                 <div class="row mt-5">
                     <div class="col-12 col-lg-8 mb-3">
-                        <h1 class="text-uppercase mb-3">{{ $comic['title'] }}</h1>
+                        <h1 class="text-uppercase mb-3">{{ $comic->title }}</h1>
                         <div class="price-info row align-items-center mb-3">
                             <div class="price-box col-8 d-flex justify-content-between align-items-center">
                                 <div class="d-flex align-items-center">
                                     <div class="text-green me-1">U:S:Price:</div>
-                                    <div>{{ $comic['price'] }}</div>
+                                    <div>{{ $comic->price }}</div>
                                 </div>
                                 <div class="text-uppercase text-green">Available</div>
                             </div>
@@ -36,7 +36,7 @@
                             </div>
 
                         </div>
-                        <p>{{ $comic['description'] }}</p>
+                        <p>{{ $comic->description }}</p>
                     </div>
 
                     <div class="col-12 col-lg-4">
@@ -80,21 +80,21 @@
                             <div class="border-bottom row py-2">
                                 <div class="col-4">Series:</div>
                                 <div class="col-8 text-blue">
-                                    {{ $comic['series'] }}
+                                    {{ $comic->series }}
                                 </div>
 
                             </div>
                             <div class="border-bottom row py-2">
                                 <div class="col-4">U.S.Price:</div>
                                 <div class="col-8 ">
-                                    {{ $comic['price'] }}
+                                    {{ $comic->price }}
                                 </div>
 
                             </div>
                             <div class="border-bottom row py-2">
                                 <div class="col-4">On sale date:</div>
                                 <div class="col-8 ">
-                                    {{ $comic['sale_date'] }}
+                                    {{ $comic->sale_date }}
                                 </div>
 
                             </div>

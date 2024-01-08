@@ -10,16 +10,16 @@
             <div class="label text-uppercase fw-bold">Current Series</div>
             <section id="current-series" class="container">
                 <div class="row row-gap-3">
-                    @foreach ($comics as $key => $comic)
+                    @foreach ($comics as $comic)
                         <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-                            <a href="{{ route('comics.show', $key) }}">
+                            <a href="{{ route('comics.show', $comic->id) }}">
                                 <div class="card-comics">
 
                                     <div class="img-box mb-3">
-                                        <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
+                                        <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                                     </div>
                                     <div class="card-body">
-                                        <h6 class="text-uppercase mb-5">{{ $comic['title'] }}</h6>
+                                        <h6 class="text-uppercase mb-5">{{ $comic->title }}</h6>
                                     </div>
 
                                 </div>
