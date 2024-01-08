@@ -27,7 +27,9 @@
                         </div>
                     @endforeach
                     <div class="text-center">
-                        <button class="button btn text-uppercase fw-bold">Load More</button>
+                        <button class="button btn text-uppercase fw-bold">
+                            <a class="text-white" href="{{ route('comics.create') }}">Add new Comic</a>
+                        </button>
                     </div>
                 </div>
             </section>
