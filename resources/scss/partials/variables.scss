@@ -1,0 +1,20 @@
+// fonts
+$title-font: 'Open Sans Condensed', sans-serif;
+$base-font: 'Open Sans', sans-serif;
+
+@mixin condensed {
+    transform: scale(1,1.5);
+    font-weight: 900;
+}
+
+// colors
+$color-primary: #0282f9;
+$color-light: #ffffff;
+$color-dark: #1c1c1c;
+$color-bg-footer: #303030;
+$color-icons: #797979;
+$color-light-grey: #f6f6f6;
+$color-price-comic:#55ba59;
+$color-price-comic-text:#bafd9c;
+$color-comic-title:#003f5e;
+$color-mid-grey:#b6afaf;

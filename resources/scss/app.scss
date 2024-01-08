@@ -1,0 +1,264 @@
+@use './partials/variables.scss' as *;
+
+$fa-font-path: "../webfonts" !default;
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    font-family: $base-font;
+}
+a{
+    text-decoration: none;
+}
+li {
+    list-style-type: none;
+}
+ul{
+    padding: 0;
+}
+img {
+    width: 100%;
+    display: block;
+}
+
+header{
+    li {
+        @include condensed;
+        font-size: 0.8em;
+        a{
+            color: $color-dark;
+            &:hover{
+                color: $color-primary;
+            }
+        }
+    }
+    .search{
+        border-bottom: 3px solid $color-primary;
+        .searchbar{
+            border: 0 !important;
+            &:focus{
+                box-shadow: none;
+            }
+        }
+
+    }
+
+}
+
+main{
+    color: $color-light;
+    background-color: $color-dark;
+
+    #current-series{
+        .card-comics{
+            width: 200px;
+            .img-box{
+                width: 200px;
+                height: 200px;
+                overflow: hidden;
+                transition: all 0.1s;
+                cursor: pointer;
+            }
+            &:hover{
+                transform: scale(0.99);
+            }
+        }
+    }
+
+    #games{
+        .card-games{
+            width: 200px;
+            .img-box{
+                width: 200px;
+                // height: 200px;
+                overflow: hidden;
+                transition: all 0.1s;
+                cursor: pointer;
+            }
+            &:hover{
+                transform: scale(0.99);
+            }
+        }
+    }
+
+    .container{
+        position: relative;
+        .label{
+        padding: 8px 25px;
+        background-color: $color-primary;
+        position: absolute;
+        top:-25px;
+        left: 0;
+        @include condensed;
+        font-size: 1em;
+        }
+
+    }
+    #comic-detail, #game-detail{
+
+        .blueline{
+            height: 70px;
+            width: 100%;
+            background-color: $color-primary;
+            .container{
+                position: relative;
+                .comic-img{
+                    width: 200px;
+                    position: absolute;
+                    bottom: -50px;
+                    left: 0;
+                    img {
+                        width: 100%;
+                        border: 2px solid $color-light;
+                    }
+                }
+                .game-img{
+                    width: 400px;
+                    position: absolute;
+                    bottom: -50px;
+                    left: 0;
+                    img {
+                        width: 100%;
+                        border: 2px solid $color-light;
+                    }
+                }
+            }
+
+        }
+        background-color: $color-light;
+        color: $color-bg-footer;
+        h1{
+            color: $color-comic-title !important;
+            font-weight: bold;
+        }
+        h6{
+            @include condensed;
+        }
+        .price-info{
+            background-color: $color-price-comic;
+            font-weight: bold;
+            color: $color-light;
+            .text-green{
+                color: $color-price-comic-text;
+            }
+            .price-box{
+                border-bottom: 1px solid $color-bg-footer;
+                padding: 20px 15px;
+
+            }
+        }
+        .specs{
+            font-weight: 600;
+            font-size: 0.8em;
+            background-color: $color-light-grey;
+            border-top: 1px solid $color-mid-grey;
+            padding-top: 30px;
+            .border-bottom{
+               border-bottom: 1px solid $color-mid-grey;
+            }
+            .text-blue{
+                color: $color-primary;
+            }
+            .buy{
+                color: $color-mid-grey;
+                .img-box{
+                    height: 50px;
+                    img{
+                        height: 100%;
+                        filter: invert(30%);
+                    }
+                }
+            }
+
+        }
+    }
+
+
+    #jumbo{
+        height: 400px;
+        // overflow: hidden;
+        background-image: url("../img/jumbotron.jpg");
+        background-size: cover;
+
+    }
+    .button {
+        background-color: $color-primary;
+        color: $color-light;
+        padding: 8px 50px;
+        border-radius: 0;
+        @include condensed;
+        font-size:0.8em;
+    }
+    #comic-detail{
+        h1{
+            color: $color-primary;
+        }
+    }
+}
+#resources {
+    background-color: $color-primary;
+    #img-box {
+        width: 50px;
+        img {
+            width: 100%;
+        }
+    }
+    a .box{
+        transition: all 0.2s;
+        &:hover {
+        transform: scale(0.97);
+    }
+    }
+
+}
+footer{
+    .footer-links{
+        background-image: url('../img/footer-bg.jpg');
+        background-size: cover;
+        height: 350px;
+        color: $color-light;
+        #dc-logo-bg {
+            display: block;
+            object-fit: none;
+            overflow-x:visible;
+            z-index:500;
+        }
+        h4{
+            @include condensed;
+            font-size: 1em;
+        }
+        a{
+            color: $color-icons;
+            font-weight: 500;
+            font-size: 0.8em;
+            z-index: 1000;
+            &:hover{
+                    color: $color-light;
+             }
+        }
+    }
+    .footer-social {
+        background-color: $color-bg-footer;
+        button {
+            color: $color-light;
+            border: 2px solid $color-primary;
+            border-radius: 0;
+        }
+        .follow-us{
+            color:$color-primary;
+            font-size: 1.1em;
+            @include condensed;
+
+
+        }
+        a img:hover{
+            opacity: 80%;
+        }
+    }
+
+}
