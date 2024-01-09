@@ -47,6 +47,12 @@
                     </div>
 
                 </div>
+
+                <button class="button btn btn-primary text-uppercase fw-bold"><a
+                        href="{{ route('comics.edit', $comic->id) }}" class="text-white">Update
+                        comic</a>
+                </button>
+
             </div>
             <div class="specs">
                 <div class="container">
