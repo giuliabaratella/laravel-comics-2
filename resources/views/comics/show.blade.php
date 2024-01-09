@@ -48,10 +48,17 @@
 
                 </div>
 
-                <button class="button btn btn-primary text-uppercase fw-bold"><a
-                        href="{{ route('comics.edit', $comic->id) }}" class="text-white">Update
-                        comic</a>
-                </button>
+                <div class="d-flex">
+                    <button class="button btn btn-primary text-uppercase fw-bold"><a
+                            href="{{ route('comics.edit', $comic->id) }}" class="text-white">Update
+                            comic</a>
+                    </button>
+                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="button btn btn-danger text-uppercase fw-bold">Delete comic</button>
+                    </form>
+                </div>
 
             </div>
             <div class="specs">

@@ -9,6 +9,9 @@
         <div class="container py-5">
             <div class="label text-uppercase fw-bold">Current Series</div>
             <section id="current-series" class="container">
+                @if (session()->has('message'))
+                    <div class="alert alert-success">{{ session('message') }}</div>
+                @endif
                 <div class="row row-gap-3">
                     @foreach ($comics as $comic)
                         <div class="col-12 col-md-4 col-lg-3 col-xl-2">
