@@ -201,13 +201,20 @@ main{
         background-size: cover;
 
     }
-    .button {
-        background-color: $color-primary;
+    .button, .button-danger {
         color: $color-light;
         padding: 8px 50px;
         border-radius: 0;
         @include condensed;
         font-size:0.8em;
+    }
+    .button {
+        background-color: $color-primary;
+
+    }
+    .button-danger{
+        background-color: $color-danger;
+
     }
     #comic-detail{
         h1{

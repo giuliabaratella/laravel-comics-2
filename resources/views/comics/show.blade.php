@@ -48,7 +48,7 @@
 
                 </div>
 
-                <div class="d-flex">
+                <div class="d-flex column-gap-4">
                     <button class="button btn btn-primary text-uppercase fw-bold"><a
                             href="{{ route('comics.edit', $comic->id) }}" class="text-white">Update
                             comic</a>
@@ -56,7 +56,8 @@
                     <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="button btn btn-danger text-uppercase fw-bold">Delete comic</button>
+                        <button type="submit" class="button-danger btn btn-danger text-uppercase fw-bold">Delete
+                            comic</button>
                     </form>
                 </div>
 
