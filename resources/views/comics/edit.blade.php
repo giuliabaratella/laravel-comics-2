@@ -13,7 +13,7 @@
                 <div class="py-5">
                     <h2>Update {{ $comic->title }}</h2>
                     <div class="card p-2">
-                        <form {{-- action="{{ route('comics.update') }}"  --}} method="POST">
+                        <form action="{{ route('comics.update', $comic->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="mb-3">

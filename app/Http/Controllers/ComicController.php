@@ -39,15 +39,7 @@ class ComicController extends Controller
     {
         $form_data = $request->all();
 
-        $newComic = new Comic();
-        $newComic->title = $form_data['title'];
-        $newComic->description = $form_data['description'];
-        $newComic->thumb = $form_data['thumb'];
-        $newComic->price = $form_data['price'];
-        $newComic->sale_date = $form_data['sale_date'];
-        $newComic->series = $form_data['series'];
-        $newComic->type = $form_data['type'];
-        $newComic->save();
+        $newComic = Comic::create($form_data);
 
         return to_route('comics.index');
     }
@@ -77,11 +69,15 @@ class ComicController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Comic  $comic
-     * @return \Illuminate\Http\Response
+
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $form_data = $request->all();
+        $comic->fill($form_data);
+        $comic->update();
+
+        return to_route('comics.show', $comic->id);
     }
 
     /**
