@@ -28,7 +28,7 @@ class UpdateComicRequest extends FormRequest
             'description' => 'nullable|min:5',
             'thumb' => 'nullable|url',
             'price' => 'required|min:3|max:20',
-            'sale_date' => 'required|min:10|max:10',
+            'sale_date' => 'required|date',
             'series' => 'required|min:3|max:100',
             'type' => 'required',
         ];
@@ -46,8 +46,8 @@ class UpdateComicRequest extends FormRequest
             'price.min' => 'Il campo Price deve avere almeno :min caratteri',
             'price.max' => 'Il campo Price deve avere massimo :max caratteri',
             'sale_date.required' => 'Il campo Sale Date è obbligatorio',
-            'sale_date.min' => 'Il campo Sale Date deve avere almeno :min caratteri',
-            'sale_date.max' => 'Il campo Sale Date deve avere massimo :max caratteri',
+            'sale_date.date' => 'La data deve essere inserita in questo formato: YYYY-MM-DD ',
+
             'series.required' => 'Il campo Series è obbligatorio',
             'series.min' => 'Il campo Series deve avere almeno :min caratteri',
             'series.max' => 'Il campo Series deve avere massimo :max caratteri',
