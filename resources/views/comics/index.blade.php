@@ -9,6 +9,20 @@
         <div class="container py-5">
             <div class="label text-uppercase fw-bold">Current Series</div>
             <section id="current-series" class="container">
+
+                <div class="d-flex justify-content-end">
+                    <div class="py-5">
+                        <form action="{{ route('comics.index') }}" method="GET">
+                            @csrf
+                            <div class="input-group">
+                                <input type="search" name="search" id="search" placeholder="Search bty title"
+                                    aria-label="Search" class="form-control">
+                                <button type="submit" class="btn btn-primary text-uppercase fw-bold ">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
                 @if (session()->has('message'))
                     <div class="alert alert-success">{{ session('message') }}</div>
                 @endif
