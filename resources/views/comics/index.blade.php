@@ -15,7 +15,7 @@
                         <form action="{{ route('comics.index') }}" method="GET">
                             @csrf
                             <div class="input-group">
-                                <input type="search" name="search" id="search" placeholder="Search bty title"
+                                <input type="search" name="search" id="search" placeholder="Search by title"
                                     aria-label="Search" class="form-control">
                                 <button type="submit" class="btn btn-primary text-uppercase fw-bold ">Search</button>
                             </div>
@@ -35,24 +35,34 @@
                                     <div class="img-box mb-3">
                                         <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                                     </div>
-                                    <div class="card-body">
-                                        <h6 class="text-uppercase mb-5">{{ $comic->title }}</h6>
-                                    </div>
-
-                                </div>
                             </a>
+                            <div class="card-body mb-5">
+                                <div class="d-flex justify-content-between ">
+                                    <h6 class="text-uppercase ">{{ $comic->title }}</h6>
+                                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="cancel-button btn btn-danger"
+                                            data-item-title="{{ $comic->title }}">X</button>
+                                    </form>
+                                </div>
+                            </div>
+
                         </div>
-                    @endforeach
-                    <div class="text-center">
-                        <button class="button btn text-uppercase fw-bold">
-                            <a class="text-white" href="{{ route('comics.create') }}">Add new Comic</a>
-                        </button>
-                    </div>
+
                 </div>
-            </section>
+                @endforeach
+                <div class="text-center">
+                    <button class="button btn text-uppercase fw-bold">
+                        <a class="text-white" href="{{ route('comics.create') }}">Add new Comic</a>
+                    </button>
+                </div>
+        </div>
+        </section>
         </div>
 
     </main>
     @include('partials.resources')
+    @include ('partials.modal_delete')
 
 @endsection
