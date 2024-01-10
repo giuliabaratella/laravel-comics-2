@@ -113,6 +113,8 @@ php artisan make:controller ComicController --resource
 ```bash
 #ceare model con relativo resource controller, migration e seeder
 php artisan make:model Comic -rcms
+#con anche request
+php artisan make:model Comic -rcms --request
 
 #leggere rotte:
 php artisan route:list --except-vendor
@@ -122,3 +124,13 @@ Route::resource('comics', ComicController::class);
 ```
 
 <!-- composer dump-autoload -->
+
+## Validazioni
+
+```bash
+#creo la form request per validazione
+php artisan make:request StoreNomeModelRequest
+php artisan make:request UpdateNomeModelRequest
+
+
+```
