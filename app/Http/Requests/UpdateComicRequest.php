@@ -37,7 +37,7 @@ class UpdateComicRequest extends FormRequest
     {
         return [
 
-            'title.required' => 'Il campo Price è obbligatorio',
+            'title.required' => 'Il campo Title è obbligatorio',
             'title.min' => 'Il campo Title deve avere almeno :min caratteri',
             'title.max' => 'Il campo Title deve avere massimo :max caratteri',
             'description.min' => 'Il campo Description deve avere minimo :min caratteri',
